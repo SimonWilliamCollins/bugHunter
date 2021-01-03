@@ -3,6 +3,10 @@
         <title>{{ title }}</title>
     </head>
     <body>
-        <h1>Hello {{ username}}</h1>
-    </body>
+        <ul>
+            {% for member in members: %}
+            <li>{{ member }}</li>
+            {% endfor %}
+        </ul>
+    </body 
 </html>
