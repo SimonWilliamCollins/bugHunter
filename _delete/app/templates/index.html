@@ -1,12 +1,8 @@
 <html>
     <head>
-        <title>{{ title }}</title>
+        <script type="text/javascript" src="{{ url_for('static', filename = 'hello.js') }}"></script>
     </head>
     <body>
-        <ul>
-            {% for member in members: %}
-            <li>{{ member }}</li>
-            {% endfor %}
-        </ul>
+       <input type="button" onclick="sayHello()" value="Say Hello" />
     </body 
 </html>
