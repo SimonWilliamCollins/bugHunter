@@ -6,6 +6,20 @@ from flask import Flask, redirect, url_for, request
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/student')
+def student():
+    return render_template('student.html')
+
+@app.route('/result', methods = ['POST', 'GET'])
+def result():
+    if request.method == 'POST':
+        result = request.form
+        return render_template("result.html", result = result)
+
 @app.route('/dashboard/<name>')
 def dashboard(name):
     return 'Welcome %s' % name
@@ -18,13 +32,7 @@ def login():
     else:
         user = request.args.get('name')
         return render_template('login.html')
-
-@app.route('/')
-@app.route('/index/<name>')
-def index():
-    users = ['Helen', 'Adrianna', 'Victoria']
-    return render_template('index.html',title='Welcome', members=users)
-
+        
 @app.route('/hello')
 def hello_world():
     return "hello world"
