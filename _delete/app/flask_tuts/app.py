@@ -49,7 +49,6 @@ def get_sale(transaction_id = 0):
 def create(first_name=None,last_name=None):
     return 'hello ' + first_name + ',' + last_name 
 
-#app.run(host='0.0.0.0', port=81)
 
 if __name__ == '__main__':
     app.run(debug=True)
