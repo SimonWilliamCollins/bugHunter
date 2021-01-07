@@ -1,6 +1,7 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, make_response
 from flask import request
+
 
 app = Flask(__name__)
 
@@ -8,15 +9,16 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-app.route('/setcookie', methods = ['POST', 'GET'])
+@app.route('/setcookie', methods = ['POST', 'GET'])
 def setcookie():
    if request.method == 'POST':
-   user = request.form['nm']
+    user = request.form['nm']
    
-   resp = Flask.make_response(render_template('readcookie.html'))
-   resp.set_cookie('userID', user)
+    resp = make_response(render_template('readcookie.html'))
+    resp.set_cookie('userID', user)
    
-   return resp
+    return resp
+
 
 @app.route('/getcookie')
 def getcookie():
