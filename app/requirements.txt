@@ -1,2 +1,2 @@
 Flask-Login==0.3.2
-Falsk-mongoengine==1.0.0
+Flask-mongoengine==1.0.0
