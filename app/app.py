@@ -56,7 +56,7 @@ class User(db.Document):
     def to_json(self):
         return {"name": self.name,
                 "email": self.email}
-    def
+    
 
 @app.route('/login', method = ['POST'])
 def login():
